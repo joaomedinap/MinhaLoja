@@ -5,6 +5,7 @@ import Carrinho from './components/Carrinho'
 function App() {
   return (
     <>
+      <BrowserRouter basename="/MinhaLoja"></BrowserRouter>
       <header className="bg-primary text-white text-center py-3 mb-4">
         <h1 className="m-0">Loja de Cervejas</h1>
       </header>
