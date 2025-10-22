@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-function Produtos({ nome, avaliacao, preco, img, id, comprar }) {
+function Produtos({ nome, avaliacao, preco, img, id, comprar, descricao }) {
   const navigate = useNavigate();
 
   const estrelasAvaliacao = () => {

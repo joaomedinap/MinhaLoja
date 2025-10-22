@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import produtos from "../data/produtos.json";
 
 function Pagina_Produto() {
     const { id } = useParams();
     const navigate = useNavigate();
     const [quantidade, setQuantidade] = useState(1);
-    const produtos = [
-        { id: 1, nome: 'Amstel', avaliacao: 100, preco: 100, img: '/src/assets/images/amstel.jpg' },
-        { id: 2, nome: 'Budweiser', avaliacao: 95, preco: 120, img: '/src/assets/images/bud.jpg' },
-        { id: 3, nome: 'Corona', avaliacao: 123, preco: 80, img: '/src/assets/images/corona.jpg' },
-        { id: 4, nome: 'Eisenbahn', avaliacao: 110, preco: 90, img: '/src/assets/images/eisenbahn.jpg' },
-        { id: 5, nome: 'Estrela Galicia', avaliacao: 88, preco: 85, img: '/src/assets/images/estrela.jpg' },
-        { id: 6, nome: 'Heineken', avaliacao: 150, preco: 130, img: '/src/assets/images/heineken.jpg' },
-        { id: 7, nome: 'Original', avaliacao: 75, preco: 70, img: '/src/assets/images/original.jpg' },
-        { id: 8, nome: 'Patagonia', avaliacao: 92, preco: 95, img: '/src/assets/images/patagonia.jpg' },
-        { id: 9, nome: 'Polar', avaliacao: 68, preco: 65, img: '/src/assets/images/polar.jpg' },
-    ];
+    const estrelasAvaliacao = () => {
+        return (
+            <div className="d-flex align-items-center justify-content-center gap-1">
+                {[...Array(5)].map((_, index) => (
+                    <i key={index} className="bi bi-star-fill text-warning"></i>
+                ))}
+            </div>
+        );
+    };
+
     const produto = produtos.find(p => p.id === parseInt(id));
-    const { nome, avaliacao, preco, img } = produto;
+    const { nome, avaliacao, preco, img, descricao } = produto;
 
     const adicionarAoCarrinho = () => {
         const produtoCarrinho = {
@@ -26,7 +26,7 @@ function Pagina_Produto() {
             avaliacao,
             preco,
             img,
-            quantidade
+            quantidade,
         };
     };
 
@@ -42,9 +42,13 @@ function Pagina_Produto() {
                 <div className="col-md-6">
                     <h1>{nome}</h1>
                     <div className="mb-3">
+                        <div className="mr-5">{estrelasAvaliacao()}</div>
                         <small className="text-muted ms-2">({avaliacao} avaliações)</small>
                     </div>
                     <h3 className="text-success mb-4">R$ {preco}</h3>
+                    <div className="mb-4">
+                        <p>{descricao}</p>
+                    </div>
                     <div className="mb-3">
                         <label className="form-label">Quantidade:</label>
                         <input
