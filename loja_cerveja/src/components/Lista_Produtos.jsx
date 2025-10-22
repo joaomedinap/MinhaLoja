@@ -1,17 +1,20 @@
-import { useState } from 'react';
 import Produtos from './Produtos';
 import produtos from '../data/produtos.json';
+import PropTypes from 'prop-types';
 
-function Lista_Produtos() {
-  const [carrinho, setCarrinho] = useState([]);
-
-
-  //nao adicionada nada ainda
-  const adicionarAoCarrinho = (id) => {
+function Lista_Produtos({ addToCart }) {
+  const handleComprar = (id) => {
     const produto = produtos.find(p => p.id === id);
-    if (produto) {
-      setCarrinho([...carrinho, produto]);
-    }
+    if (!produto) return;
+    const produtoCarrinho = {
+      id: produto.id,
+      nome: produto.nome,
+      avaliacao: produto.avaliacao,
+      preco: produto.preco,
+      img: produto.img,
+      quantidade: 1,
+    };
+    addToCart(produtoCarrinho);
   };
 
   return (
@@ -26,7 +29,7 @@ function Lista_Produtos() {
             avaliacao={produto.avaliacao}
             preco={produto.preco}
             img={produto.img}
-            comprar={adicionarAoCarrinho}
+            comprar={handleComprar}
           />
         ))}
       </div>
@@ -35,3 +38,7 @@ function Lista_Produtos() {
 }
 
 export default Lista_Produtos;
+
+Lista_Produtos.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+};

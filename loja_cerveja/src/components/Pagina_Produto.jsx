@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import produtos from "../data/produtos.json";
 
-function Pagina_Produto() {
+function Pagina_Produto({ addToCart }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const [quantidade, setQuantidade] = useState(1);
@@ -28,6 +28,7 @@ function Pagina_Produto() {
             img,
             quantidade,
         };
+        addToCart(produtoCarrinho);
     };
 
     return (
@@ -50,14 +51,15 @@ function Pagina_Produto() {
                         <p>{descricao}</p>
                     </div>
                     <div className="mb-3">
-                        <label className="form-label">Quantidade:</label>
+                        <label htmlFor="quantidade" className="form-label">Quantidade:</label>
                         <input
+                            id="quantidade"
                             type="number"
                             className="form-control"
                             style={{ maxWidth: '100px' }}
                             value={quantidade}
                             min="1"
-                            onChange={(e) => setQuantidade(parseInt(e.target.value) || 1)}
+                            onChange={(e) => setQuantidade(Number.parseInt(e.target.value) || 1)}
                         />
                     </div>
                     <button
