@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 function Produtos({ nome, avaliacao, preco, img, id, comprar, descricao }) {
   const navigate = useNavigate();
@@ -20,10 +21,9 @@ function Produtos({ nome, avaliacao, preco, img, id, comprar, descricao }) {
         <div className="card-body d-flex flex-column">
           <h5
             className="card-title"
-            onClick={() => navigate(`/produto/${id}`)}
             style={{ cursor: 'pointer' }}
           >
-            {nome}
+            <Link to={`/produto/${id}`}>{nome}</Link>
           </h5>
           <div className="mb-2">
             {estrelasAvaliacao()}
