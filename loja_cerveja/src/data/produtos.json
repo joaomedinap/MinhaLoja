@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nome": "Amstel",
+        "avaliacao": 100,
+        "preco": 100,
+        "img": "/src/assets/images/amstel.jpg",
+        "descricao": "Cerveja Amstel, leve e refrescante."
+    },
+    {
+        "id": 2,
+        "nome": "Budweiser",
+        "avaliacao": 95,
+        "preco": 120,
+        "img": "/src/assets/images/bud.jpg",
+        "descricao": "Cerveja Budweiser, sabor clássico."
+    },
+    {
+        "id": 3,
+        "nome": "Corona",
+        "avaliacao": 123,
+        "preco": 80,
+        "img": "/src/assets/images/corona.jpg",
+        "descricao": "Cerveja Corona, refrescante e leve."
+    },
+    {
+        "id": 4,
+        "nome": "Eisenbahn",
+        "avaliacao": 110,
+        "preco": 90,
+        "img": "/src/assets/images/eisenbahn.jpg",
+        "descricao": "Cerveja Eisenbahn, sabor marcante."
+    },
+    {
+        "id": 5,
+        "nome": "Estrela Galicia",
+        "avaliacao": 88,
+        "preco": 85,
+        "img": "/src/assets/images/estrela.jpg",
+        "descricao": "Cerveja Estrela Galicia, sabor único."
+    },
+    {
+        "id": 6,
+        "nome": "Heineken",
+        "avaliacao": 150,
+        "preco": 130,
+        "img": "/src/assets/images/heineken.jpg",
+        "descricao": "Cerveja Heineken, a clássica."
+    },
+    {
+        "id": 7,
+        "nome": "Original",
+        "avaliacao": 75,
+        "preco": 70,
+        "img": "/src/assets/images/original.jpg",
+        "descricao": "Cerveja Original, sabor autêntico."
+    },
+    {
+        "id": 8,
+        "nome": "Patagonia",
+        "avaliacao": 92,
+        "preco": 95,
+        "img": "/src/assets/images/patagonia.jpg",
+        "descricao": "Cerveja Patagonia, sabor intenso."
+    },
+    {
+        "id": 9,
+        "nome": "Polar",
+        "avaliacao": 68,
+        "preco": 65,
+        "img": "/src/assets/images/polar.jpg",
+        "descricao": "Cerveja Polar, refrescante e leve."
+    }
+]

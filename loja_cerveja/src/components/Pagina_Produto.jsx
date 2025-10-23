@@ -1,8 +1,23 @@
 import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import produtos from "../data/produtos.json";
 
-function Pagina_Produto({ produto }) {
-    const { nome, avaliacao, preco, img } = produto;
+function Pagina_Produto({ addToCart }) {
+    const { id } = useParams();
+    const navigate = useNavigate();
     const [quantidade, setQuantidade] = useState(1);
+    const estrelasAvaliacao = () => {
+        return (
+            <div className="d-flex align-items-center justify-content-center gap-1">
+                {[...Array(5)].map((_, index) => (
+                    <i key={index} className="bi bi-star-fill text-warning"></i>
+                ))}
+            </div>
+        );
+    };
+
+    const produto = produtos.find(p => p.id === parseInt(id));
+    const { nome, avaliacao, preco, img, descricao } = produto;
 
     const adicionarAoCarrinho = () => {
         const produtoCarrinho = {
@@ -11,21 +26,52 @@ function Pagina_Produto({ produto }) {
             avaliacao,
             preco,
             img,
-            quantidade
+            quantidade,
         };
+        addToCart(produtoCarrinho);
     };
 
     return (
-        <div>
-            <h1>{nome}</h1>
-            <img src={img} alt={nome} />
-            <p>Avaliação: {avaliacao}</p>
-            <p>Preço: {preco}</p>
-            <input
-                type="number"
-                value={quantidade}
-            />
-            <button onClick={adicionarAoCarrinho}>Adicionar ao Carrinho</button>
+        <div className="container">
+            <button className="btn btn-link mb-3" onClick={() => navigate('/')}>
+                Voltar
+            </button>
+            <div className="row">
+                <div className="col-md-6">
+                    <img src={img} alt={nome} className="img-fluid rounded" />
+                </div>
+                <div className="col-md-6">
+                    <h1>{nome}</h1>
+                    <div className="mb-3">
+                        <div className="mr-5">{estrelasAvaliacao()}</div>
+                        <small className="text-muted ms-2">({avaliacao} avaliações)</small>
+                    </div>
+                    <h3 className="text-success mb-4">R$ {preco}</h3>
+                    <div className="mb-4">
+                        <p>{descricao}</p>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="quantidade" className="form-label">Quantidade:</label>
+                        <input
+                            id="quantidade"
+                            type="number"
+                            className="form-control"
+                            style={{ maxWidth: '100px' }}
+                            value={quantidade}
+                            min="1"
+                            onChange={(e) => setQuantidade(Number.parseInt(e.target.value) || 1)}
+                        />
+                    </div>
+                    <button
+                        className="btn btn-success btn-lg w-100"
+                        onClick={adicionarAoCarrinho}
+                    >
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
+
+export default Pagina_Produto;
