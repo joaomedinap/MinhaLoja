@@ -8,7 +8,7 @@ function Pagina_Produto({ addToCart }) {
     const [quantidade, setQuantidade] = useState(1);
     const estrelasAvaliacao = () => {
         return (
-            <div className="d-flex align-items-center justify-content-center gap-1">
+            <div className="d-flex gap-1">
                 {[...Array(5)].map((_, index) => (
                     <i key={index} className="bi bi-star-fill text-warning"></i>
                 ))}
@@ -34,6 +34,7 @@ function Pagina_Produto({ addToCart }) {
     return (
         <div className="container">
             <button className="btn btn-link mb-3" onClick={() => navigate('/')}>
+                <i className="bi bi-arrow-left-circle me-1"></i>
                 Voltar
             </button>
             <div className="row">

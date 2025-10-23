@@ -4,7 +4,7 @@
         "nome": "Amstel",
         "avaliacao": 100,
         "preco": 100,
-        "img": "/src/assets/images/amstel.jpg",
+        "img": "/MinhaLoja/amstel.jpg",
         "descricao": "Cerveja Amstel, leve e refrescante."
     },
     {
@@ -12,7 +12,7 @@
         "nome": "Budweiser",
         "avaliacao": 95,
         "preco": 120,
-        "img": "/src/assets/images/bud.jpg",
+        "img": "/MinhaLoja/bud.jpg",
         "descricao": "Cerveja Budweiser, sabor clássico."
     },
     {
@@ -20,7 +20,7 @@
         "nome": "Corona",
         "avaliacao": 123,
         "preco": 80,
-        "img": "/src/assets/images/corona.jpg",
+        "img": "/MinhaLoja/corona.jpg",
         "descricao": "Cerveja Corona, refrescante e leve."
     },
     {
@@ -28,7 +28,7 @@
         "nome": "Eisenbahn",
         "avaliacao": 110,
         "preco": 90,
-        "img": "/src/assets/images/eisenbahn.jpg",
+        "img": "/MinhaLoja/eisenbahn.jpg",
         "descricao": "Cerveja Eisenbahn, sabor marcante."
     },
     {
@@ -36,7 +36,7 @@
         "nome": "Estrela Galicia",
         "avaliacao": 88,
         "preco": 85,
-        "img": "/src/assets/images/estrela.jpg",
+        "img": "/MinhaLoja/estrela.jpg",
         "descricao": "Cerveja Estrela Galicia, sabor único."
     },
     {
@@ -44,7 +44,7 @@
         "nome": "Heineken",
         "avaliacao": 150,
         "preco": 130,
-        "img": "/src/assets/images/heineken.jpg",
+        "img": "/MinhaLoja/heineken.jpg",
         "descricao": "Cerveja Heineken, a clássica."
     },
     {
@@ -52,7 +52,7 @@
         "nome": "Original",
         "avaliacao": 75,
         "preco": 70,
-        "img": "/src/assets/images/original.jpg",
+        "img": "/MinhaLoja/original.jpg",
         "descricao": "Cerveja Original, sabor autêntico."
     },
     {
@@ -60,7 +60,7 @@
         "nome": "Patagonia",
         "avaliacao": 92,
         "preco": 95,
-        "img": "/src/assets/images/patagonia.jpg",
+        "img": "/MinhaLoja/patagonia.jpg",
         "descricao": "Cerveja Patagonia, sabor intenso."
     },
     {
@@ -68,7 +68,7 @@
         "nome": "Polar",
         "avaliacao": 68,
         "preco": 65,
-        "img": "/src/assets/images/polar.jpg",
+        "img": "/MinhaLoja/polar.jpg",
         "descricao": "Cerveja Polar, refrescante e leve."
     }
 ]
