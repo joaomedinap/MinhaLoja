@@ -14,7 +14,7 @@ function Carrinho({ carrinho = [], removeFromCart, clearCart }) {
       <button className="btn btn-link mb-3" onClick={() => navigate('/')}>
         Voltar
       </button>
-      <h3 className="fw-bold mb-3">Carrinho</h3>
+      <h1 className="fw-bold mb-3">Carrinho</h1>
       <div className="bg-secondary bg-opacity-10 p-4 rounded">
         <p className="mb-1 fw-semibold">Itens: {itens}</p>
         <p className="mb-3 fw-semibold">Total: R$ {total}</p>

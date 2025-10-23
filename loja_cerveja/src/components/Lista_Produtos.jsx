@@ -19,7 +19,7 @@ function Lista_Produtos({ addToCart }) {
 
   return (
     <section className="mb-5">
-      <h3 className="fw-bold mb-4">Lista de Produtos</h3>
+      <h1 className="fw-bold mb-4">Lista de Produtos</h1>
       <div className="row g-5">
         {produtos.map(produto => (
           <Produtos

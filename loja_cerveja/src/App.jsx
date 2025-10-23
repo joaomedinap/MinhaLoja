@@ -30,17 +30,17 @@ function App() {
         </a>
       </header>
 
-      <div className="bg-dark-subtle py-2 mb-4">
+      <div className="bg-dark-subtle">
         <nav className="container-md py-2">
           <a className="text-decoration-none" href="/MinhaLoja/carrinho" data-discover="true">
             <h1>
               <i className="bi bi-cart"></i>
-               Carrinho ({totalItens})
+              &nbsp;Carrinho ({totalItens})
             </h1>
           </a>
         </nav>
       </div>
-      <main className="container mb-5">
+      <main className="container mb-5 py-2">
         <Routes>
           <Route path="/" element={
             <>
