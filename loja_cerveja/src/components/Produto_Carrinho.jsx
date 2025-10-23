@@ -1,7 +1,26 @@
-import React from "react"; 
+import React from "react";
 
-function Produto_Carrinho({ produto, onExcluir }) {
-  const { nome, preco, img, id } = produto;
+function Produto_Carrinho({ produto, onExcluir, atualizaQuantidade }) {
+  const { nome, preco, img, id, quantidade } = produto;
+
+  const aumentar = () => {
+    atualizaQuantidade(id, quantidade + 1);
+  };
+
+  const diminuir = () => {
+    if (quantidade > 1) {
+      atualizaQuantidade(id, quantidade - 1);
+    }
+  };
+
+  const digitaValorProduto = (e) => {
+    const valor = parseInt(e.target.value);
+    if (valor > 0) {
+      atualizaQuantidade(id, valor);
+    } else if (e.target.value === "") {
+      atualizaQuantidade(id, 1);
+    }
+  };
 
   return (
     <div className="d-flex align-items-center justify-content-between bg-white border rounded p-2 mb-2">
@@ -17,9 +36,16 @@ function Produto_Carrinho({ produto, onExcluir }) {
           <small className="text-dark">R$ {preco}</small>
         </div>
       </div>
-      <button className="btn btn-warning btn-sm" onClick={onExcluir}>
-        Excluir
-      </button>
+      <div className="d-flex align-items-center gap-2">
+        <i className="bi bi-dash-circle" style={{ color: "red", cursor: "pointer" }} onClick={diminuir}></i>
+        <input type="number" className="form-control form-control-sm" style={{ width: "60px" }} value={quantidade} min={1} onChange={digitaValorProduto} />
+        <i className="bi bi-plus-circle" style={{ color: "green", cursor: "pointer" }} onClick={aumentar}></i>
+        <div>
+          <button className="btn btn-warning btn-sm ms-3" onClick={onExcluir}>
+            Excluir
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
