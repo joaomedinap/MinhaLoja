@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 import ListaProdutos from './components/Lista_Produtos'
 import Carrinho from './components/Carrinho'
 import PaginaProduto from './components/Pagina_Produto'
+import FinalizaCompra from './components/FinalizaCompra'
 
 function App() {
   const [carrinho, setCarrinho] = useState(() => {
@@ -65,6 +66,7 @@ function App() {
           } />
           <Route path="/carrinho" element={<Carrinho carrinho={carrinho} removeFromCart={removeFromCart} clearCart={clearCart} atualizaQuantidade={atualizaQuantidade} />} />
           <Route path="/produto/:id" element={<PaginaProduto addToCart={addToCart} />} />
+          <Route path="/finalizar-compra" element={<FinalizaCompra />} />
         </Routes>
       </main>
       <footer className="bg-primary text-white text-center py-2 mt-auto">

@@ -44,7 +44,7 @@ function Carrinho({ carrinho = [], removeFromCart, clearCart, atualizaQuantidade
           </div>
         </div>
         <button className="btn btn-danger btn-sm mt-3 ms-5" onClick={() => clearCart?.()}>Limpar</button>
-        <button className="btn btn-success btn-sm float-end mt-3 me-5" onClick={() => clearCart?.()}>Finalizar Compra</button>
+        <button className="btn btn-success btn-sm float-end mt-3 me-5" onClick={() => { navigate('/finalizar-compra'); clearCart?.(); }}>Finalizar Compra</button>
       </section>
     );
 
