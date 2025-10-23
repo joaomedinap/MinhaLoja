@@ -20,10 +20,18 @@ function App() {
   }, [carrinho]);
 
   const addToCart = (produtoCarrinho) => {
-    setCarrinho(prev => {
-      const existente = prev.find(p => p.id === produtoCarrinho.id);
+    setCarrinho((prev) => {
+      const existente = prev.find((p) => p.id === produtoCarrinho.id);
       if (existente) {
-        return prev.map(p => p.id === produtoCarrinho.id ? { ...p, quantidade: (p.quantidade || 0) + (produtoCarrinho.quantidade || 0) } : p);
+        return prev.map((p) =>
+          p.id === produtoCarrinho.id
+            ? {
+                ...p,
+                quantidade:
+                  (p.quantidade || 0) + (produtoCarrinho.quantidade || 0),
+              }
+            : p
+        );
       }
       return [...prev, produtoCarrinho];
     });
@@ -73,7 +81,7 @@ function App() {
         Direitos Autorais © 2025
       </footer>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;

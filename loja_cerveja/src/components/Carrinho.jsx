@@ -1,13 +1,14 @@
-import React from "react";
 import ProdutoCarrinho from "./Produto_Carrinho";
-import PropTypes from 'prop-types';
 import { useNavigate } from "react-router-dom";
 
 function Carrinho({ carrinho = [], removeFromCart, clearCart, atualizaQuantidade }) {
   const navigate = useNavigate();
 
   const itens = (carrinho || []).reduce((s, p) => s + (p.quantidade || 0), 0);
-  const total = (carrinho || []).reduce((s, p) => s + ((p.preco || 0) * (p.quantidade || 0)), 0);
+  const total = (carrinho || []).reduce(
+    (s, p) => s + (p.preco || 0) * (p.quantidade || 0),
+    0
+  );
 
   if (itens === 0) {
     return (

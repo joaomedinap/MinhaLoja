@@ -1,10 +1,9 @@
-import Produtos from './Produtos';
-import produtos from '../data/produtos.json';
-import PropTypes from 'prop-types';
+import Produtos from "./Produtos";
+import produtos from "../data/produtos.json";
 
 function Lista_Produtos({ addToCart }) {
   const handleComprar = (id) => {
-    const produto = produtos.find(p => p.id === id);
+    const produto = produtos.find((p) => p.id === id);
     if (!produto) return;
     const produtoCarrinho = {
       id: produto.id,
@@ -21,7 +20,7 @@ function Lista_Produtos({ addToCart }) {
     <section className="mb-5">
       <h1 className="fw-bold mb-4">Lista de Produtos</h1>
       <div className="row g-5">
-        {produtos.map(produto => (
+        {produtos.map((produto) => (
           <Produtos
             key={produto.id}
             id={produto.id}
@@ -38,7 +37,3 @@ function Lista_Produtos({ addToCart }) {
 }
 
 export default Lista_Produtos;
-
-Lista_Produtos.propTypes = {
-  addToCart: PropTypes.func.isRequired,
-};
