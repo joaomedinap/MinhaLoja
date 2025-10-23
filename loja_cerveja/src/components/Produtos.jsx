@@ -1,8 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-function Produtos({ nome, avaliacao, preco, img, id, comprar, descricao }) {
-  const navigate = useNavigate();
-
+function Produtos({ nome, avaliacao, preco, img, id, comprar }) {
   const estrelasAvaliacao = () => {
     return (
       <div className="d-flex align-items-center justify-content-center gap-1">
