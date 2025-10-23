@@ -46,7 +46,7 @@ function App() {
         </Link>
       </header>
 
-      <div className="bg-dark-subtle py-2 mb-4">
+      <div className="bg-dark-subtle">
         <nav className="container-md py-2">
           <Link className="text-decoration-none" to="/carrinho">
             <h1>
@@ -56,7 +56,7 @@ function App() {
           </Link>
         </nav>
       </div>
-      <main className="container mb-5">
+      <main className="container mb-5 py-2">
         <Routes>
           <Route path="/" element={
             <>
