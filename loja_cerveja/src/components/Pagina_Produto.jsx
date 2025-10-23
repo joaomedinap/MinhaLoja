@@ -16,20 +16,20 @@ function Pagina_Produto({ addToCart }) {
         );
     };
 
-  const produto = produtos.find((p) => p.id === parseInt(id));
-  const { nome, avaliacao, preco, img, descricao } = produto;
+    const produto = produtos.find((p) => p.id === parseInt(id));
+    const { nome, avaliacao, preco, img, descricao } = produto;
 
-  const adicionarAoCarrinho = () => {
-    const produtoCarrinho = {
-      id: produto.id,
-      nome,
-      avaliacao,
-      preco,
-      img,
-      quantidade,
+    const adicionarAoCarrinho = () => {
+        const produtoCarrinho = {
+            id: produto.id,
+            nome,
+            avaliacao,
+            preco,
+            img,
+            quantidade,
+        };
+        addToCart(produtoCarrinho);
     };
-    addToCart(produtoCarrinho);
-  };
 
     return (
         <div className="container">
@@ -51,18 +51,6 @@ function Pagina_Produto({ addToCart }) {
                     <div className="mb-4">
                         <p>{descricao}</p>
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="quantidade" className="form-label">Quantidade:</label>
-                        <input
-                            id="quantidade"
-                            type="number"
-                            className="form-control"
-                            style={{ maxWidth: '100px' }}
-                            value={quantidade}
-                            min="1"
-                            onChange={(e) => setQuantidade(Number.parseInt(e.target.value) || 1)}
-                        />
-                    </div>
                     <button
                         className="btn btn-success btn-lg w-100"
                         onClick={adicionarAoCarrinho}
@@ -72,42 +60,7 @@ function Pagina_Produto({ addToCart }) {
                 </div>
             </div>
         </div>
-        <div className="col-md-6">
-          <h1>{nome}</h1>
-          <div className="mb-3">
-            <div className="mr-5">{estrelasAvaliacao()}</div>
-            <small className="text-muted ms-2">({avaliacao} avaliações)</small>
-          </div>
-          <h3 className="text-success mb-4">R$ {preco}</h3>
-          <div className="mb-4">
-            <p>{descricao}</p>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="quantidade" className="form-label">
-              Quantidade:
-            </label>
-            <input
-              id="quantidade"
-              type="number"
-              className="form-control"
-              style={{ maxWidth: "100px" }}
-              value={quantidade}
-              min="1"
-              onChange={(e) =>
-                setQuantidade(Number.parseInt(e.target.value) || 1)
-              }
-            />
-          </div>
-          <button
-            className="btn btn-success btn-lg w-100"
-            onClick={adicionarAoCarrinho}
-          >
-            Adicionar ao Carrinho
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default Pagina_Produto;

@@ -53,10 +53,3 @@ function Carrinho({ carrinho = [], removeFromCart, clearCart, atualizaQuantidade
 }
 
 export default Carrinho;
-
-Carrinho.propTypes = {
-  carrinho: PropTypes.array,
-  removeFromCart: PropTypes.func,
-  clearCart: PropTypes.func,
-  atualizaQuantidade: PropTypes.func,
-};
