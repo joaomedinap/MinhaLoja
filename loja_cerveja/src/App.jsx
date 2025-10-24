@@ -4,6 +4,7 @@ import ListaProdutos from "./components/Lista_Produtos";
 import Carrinho from "./components/Carrinho";
 import PaginaProduto from "./components/Pagina_Produto";
 import FinalizaCompra from "./components/FinalizaCompra";
+import PaginaNaoEncontrada from "./components/PaginaNaoEncontrada";
 
 function App() {
   const [carrinho, setCarrinho] = useState(() => {
@@ -94,6 +95,7 @@ function App() {
             element={<PaginaProduto addToCart={addToCart} />}
           />
           <Route path="/finalizar-compra" element={<FinalizaCompra />} />
+          <Route path="*" element={<PaginaNaoEncontrada />} />
         </Routes>
       </main>
       <footer className="bg-primary text-white text-center py-2 mt-auto">
